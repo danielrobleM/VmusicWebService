@@ -23,6 +23,6 @@ tasks = [
         'done': False
     }
 ]
-@app.route('API/V0.1/', methods = ['GET'])
+@app.route('/API/V0.1/', methods = ['GET'])
 def get_tasks():
     return jsonify( { 'tasks': tasks } )
