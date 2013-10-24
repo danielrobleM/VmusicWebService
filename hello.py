@@ -30,6 +30,6 @@ tasks = [
         'done': False
     }
 ]
-@app.route('/API/V0.1/Timeline', methods = ['GET'])
+@app.route('/API/V0.1/tasks', methods = ['GET'])
 def get_tasks():
     return jsonify( { 'tasks': tweet } )
