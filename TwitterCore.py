@@ -13,7 +13,7 @@ def getTweet():
  import json 
 
 
- search=json.dumps(twitter.search(q='iOSVmusic'))
+ search=json.dumps(twitter.search(q='iOSVmusic', rpp="50"))
  search=json.loads(search)
  Cant_Song=0 #Cant_Song
  List_song= []#List_song
@@ -22,16 +22,18 @@ def getTweet():
 	 # retweet_count= List_song.append(str(entry['retweet_count']))
 	 # name=List_song.append(str(entry['user']['name']))
 	 # profile_image_url=List_song.append(str(entry['user']['profile_image_url']))
-     # tballbalb=str(entry['text'])
-     text=entry['text']
-     # call a function for know is text has the right format Author + song
-     # if No , forget this node , else continue
-     retweet_count=entry['retweet_count']
-     name=entry['user']['name']
-     profile_image_url=entry['user']['profile_image_url']
-     tweet=iOStweet(name,text,profile_image_url,retweet_count)
-     List_song.append(tweet)
-     Cant_Song=Cant_Song+1
+      # tballbalb=str(entry['text'])
+      text=entry['text']
+      # call a function for know is text has the right format Author + song
+      # if No , forget this node , else continue
+      # call RdioCore For get Album,Artist,Key,Icons(200,400)
+      retweet_count=entry['retweet_count']
+      name=entry['user']['name']
+      profile_image_url=entry['user']['profile_image_url']
+      tweet=iOStweet(name,text,profile_image_url,retweet_count)
+      # print tweet
+      List_song.append(tweet)
+      Cant_Song=Cant_Song+1
  print 'Cantidad de canciones= ',Cant_Song
  ##print List_song
 

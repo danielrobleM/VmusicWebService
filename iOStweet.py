@@ -1,3 +1,4 @@
+import json
 class iOStweet (object):
 	"""This class define a iOStweet """
 	"""Twitter Elements"""
@@ -23,4 +24,4 @@ class iOStweet (object):
 		self._Artist = None
 	def iOStweet(self):
 		return self
-		
+	
