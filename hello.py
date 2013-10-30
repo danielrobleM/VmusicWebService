@@ -11,8 +11,9 @@ def hello():
     return 'Hello World! 2'
 
 tweet=TwitterCore.getTweet()
+print tweet
 print tweet[0]._Author
-print tweet[1]._Author
+# print tweet[1]._Author
 # A=json_myobj.iOStweet('ame','text','profile_image_url','retweet_count')
 # A=json.loads(tweet)
 # print A
