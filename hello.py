@@ -37,5 +37,6 @@ def Core():
 
 @app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks(): 
-    return jsonify(Core())
+	dictForReturn=Core()
+    return jsonify(dictForReturn)
 
