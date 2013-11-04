@@ -9,28 +9,33 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return 'Hello World! 2'
+@app.before_request
 
-tweet=TwitterCore.getTweet()
-# print tweet
-#create dict
-x={}
-for i in range (len(tweet)):
+def Core():
+ tweet=TwitterCore.getTweet()
+    # print tweet
+    #create dict
+ x={}
+ for i in range (len(tweet)):
      Dict={
-        'tweet_number  %s'%i:{'text':tweet[i]._tweetText,
-        'Author':tweet[i]._Author}
+       'tweet_number  %s'%i:{'text':tweet[i]._tweetText,
+       'Author':tweet[i]._Author}
         }
         
-     # print Dict 
+        # print Dict 
      x.update(Dict) 
+ print x
+ return x
+      
      
-
-print x
+# print jsonify(x)
 # print tweet[0]._tweetText
 # print tweet[1]._tweetText
 # A=json_myobj.iOStweet('ame','text','profile_image_url','retweet_count')
 # A=json.loads(tweet)
 # print A
+
 @app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks(): 
-    return jsonify(x)
+    return jsonify(Core())
 

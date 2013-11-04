@@ -1,5 +1,6 @@
 from twython import Twython
 from iOStweet import iOStweet
+import rdioCore
 def getTweet():
  APP_KEY ='UYDKjHxyhoszTHUcODlQg'
  APP_SECRET ='pa4yTGSnSbgVpAQdeHNsL8SCUKfp7CH1xLDe7GxBA'
@@ -12,7 +13,7 @@ def getTweet():
 
  import json 
 
-
+ 
  search=json.dumps(twitter.search(q='iOSVmusic', rpp="50"))
  search=json.loads(search)
  Cant_Song=0 #Cant_Song
@@ -23,19 +24,51 @@ def getTweet():
 	 # name=List_song.append(str(entry['user']['name']))
 	 # profile_image_url=List_song.append(str(entry['user']['profile_image_url']))
       # tballbalb=str(entry['text'])
-      text=entry['text']
+       text=entry['text']
       # call a function for know is text has the right format Author + song
+       Blablab=GetSong(text)
+       # print Blablab
       # if No , forget this node , else continue
       # call RdioCore For get Album,Artist,Key,Icons(200,400)
-      retweet_count=entry['retweet_count']
-      name=entry['user']['name']
-      profile_image_url=entry['user']['profile_image_url']
-      tweet=iOStweet(name,text,profile_image_url,retweet_count)
-      # print tweet
-      List_song.append(tweet)
-      Cant_Song=Cant_Song+1
+       retweet_count=entry['retweet_count']
+       name=entry['user']['name']
+       profile_image_url=entry['user']['profile_image_url']
+       tweet=iOStweet(name,text,profile_image_url,retweet_count)
+       # print tweet
+       List_song.append(tweet)
+       Cant_Song=Cant_Song+1
  print 'Cantidad de canciones= ',Cant_Song
  ##print List_song
 
  lhs, rhs = "2.7.0_bf4fda703454".split("_", 1)
  return List_song
+def GetSong(text):
+       # print text
+       # print text.split( );
+       array =text.split(':', 1 );
+       a=4
+       if len(array)==2:
+                  dataSongWithHastTag=array[1]
+                  dataSongArray=text.split('#', 1 );
+                  if len(dataSongArray)==2:
+                         dataSong=dataSongArray[0]
+                         print dataSong
+
+       
+       # print 'print split ',text.split(':', 1 );
+       return'a'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
