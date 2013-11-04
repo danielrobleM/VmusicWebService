@@ -16,8 +16,8 @@ print tweet
 #create dict
 x={}
 for i in range (len(tweet)):
-     x['Author']=tweet[i]._Author
-     x['Text']=tweet[i]._tweetText
+     x.update({"author": tweet._Author})
+     # x['Text']=tweet[i]._tweetText
      print 'Blablabalba'
 
 print x
