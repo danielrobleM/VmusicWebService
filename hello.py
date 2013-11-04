@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return 'Hello World! 2'
-@app.before_request
+# @app.before_request
 
 def Core():
  tweet=TwitterCore.getTweet()
