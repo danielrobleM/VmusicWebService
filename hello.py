@@ -1,5 +1,6 @@
 
 from iOStweet import iOStweet
+import array
 import os
 from flask import Flask ,jsonify
 import TwitterCore
@@ -12,8 +13,16 @@ def hello():
 
 tweet=TwitterCore.getTweet()
 print tweet
-print tweet[0]._Author
-# print tweet[1]._Author
+#create dict
+x={}
+for i in range (len(tweet)):
+     x['Author']=tweet[i]._Author
+     x['Text']=tweet[i]._tweetText
+     print 'Blablabalba'
+
+print x
+print tweet[0]._Author 
+print tweet[0]._tweetText
 # A=json_myobj.iOStweet('ame','text','profile_image_url','retweet_count')
 # A=json.loads(tweet)
 # print A
@@ -31,8 +40,8 @@ tasks = [
         'done': False
     }
 ]
-@app.route('/API/V0.1/tasks', methods = ['GET'])
+@app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks():
     # return jsonify( { 'tasks': tasks } 
-    return jsonify(Author=tweet[0]._Author,Text=tweet[0]._tweetText)
+    return jsonify(tweet)
 
