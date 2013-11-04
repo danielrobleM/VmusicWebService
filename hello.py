@@ -43,5 +43,5 @@ tasks = [
 @app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks():
     # return jsonify( { 'tasks': tasks } 
-    return jsonify(tweet)
+    return jsonify(Author=tweet[0]._Author,Text=tweet[0]._tweetText)
 
