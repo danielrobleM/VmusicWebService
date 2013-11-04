@@ -15,24 +15,25 @@ tweet=TwitterCore.getTweet()
 print tweet
 #create dict
 x={}
-A={
-   'text':tweet[0]._tweetText,
-    'Author':tweet[0]._Author
-    }
-x.update(A)
-C={
-    'text1':tweet[1]._tweetText,
-    'Author2':tweet[1]._Author
-    }
-x.update(C)
+# A={
+#    'text':tweet[0]._tweetText,
+#     'Author':tweet[0]._Author
+#     }
+# x.update(A)
+# C={
+#     'text1':tweet[1]._tweetText,
+#     'Author2':tweet[1]._Author
+#     }
+# x.update(C)
 for i in range (len(tweet)):
-     # A={'text':tweet[i]._tweetText,'Author':tweet[i]._Author}
-     # print x
-     # x.update(A)
-     # print x
-     print i
-     # x['Text']=tweet[i]._tweetText
-     # print 'Blablabalba'
+     Dict={
+        'tweet_number  %s'%i:{'text':tweet[i]._tweetText,
+        'Author':tweet[i]._Author}
+        }
+        
+     # print Dict 
+     x.update(Dict) 
+     
 
 print x
 print tweet[0]._tweetText
