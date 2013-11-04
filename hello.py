@@ -5,7 +5,7 @@ import os
 from flask import Flask ,jsonify
 import TwitterCore
 app = Flask(__name__)
-@app.before_request
+
 @app.route('/')
 def hello():
     return 'Hello World! 2'
@@ -29,6 +29,7 @@ print x
 # A=json_myobj.iOStweet('ame','text','profile_image_url','retweet_count')
 # A=json.loads(tweet)
 # print A
+@app.before_request
 @app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks(): 
     return jsonify(x)
