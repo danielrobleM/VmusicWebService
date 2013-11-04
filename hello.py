@@ -15,14 +15,39 @@ tweet=TwitterCore.getTweet()
 print tweet
 #create dict
 x={}
+A={
+   'text':tweet[0]._tweetText,
+    'Author':tweet[0]._Author
+    }
+x.update(A)
+C={
+    'text1':tweet[1]._tweetText,
+    'Author2':tweet[1]._Author
+    }
+x.update(C)
 for i in range (len(tweet)):
-     x.update({"author": tweet._Author})
+     # A={'text':tweet[i]._tweetText,'Author':tweet[i]._Author}
+     # print x
+     # x.update(A)
+     # print x
+     print i
      # x['Text']=tweet[i]._tweetText
-     print 'Blablabalba'
+     # print 'Blablabalba'
 
 print x
-print tweet[0]._Author 
 print tweet[0]._tweetText
+print tweet[1]._tweetText
+orig = {
+   'A': 1,
+   'B': 2,
+   'C': 3,
+}
+
+extra = {
+   'D': 4,
+   'E': 5,
+}
+
 # A=json_myobj.iOStweet('ame','text','profile_image_url','retweet_count')
 # A=json.loads(tweet)
 # print A
@@ -43,5 +68,5 @@ tasks = [
 @app.route('/api/v0.1/tasks', methods = ['GET'])
 def get_tasks():
     # return jsonify( { 'tasks': tasks } 
-    return jsonify(Author=tweet[0]._Author,Text=tweet[0]._tweetText)
+    return jsonify(x)
 
