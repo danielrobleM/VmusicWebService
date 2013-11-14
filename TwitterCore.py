@@ -49,10 +49,15 @@ def GetSong(text):
        a=4
        if len(array)==2:
                   dataSongWithHastTag=array[1]
-                  dataSongArray=text.split('#', 1 );
+                  dataSongArray=dataSongWithHastTag.split('#', 1 );
                   if len(dataSongArray)==2:
                          dataSong=dataSongArray[0]
-                         print dataSong
+                         if len(dataSong)>0:
+                              # print dataSong
+                              Almostfinish=dataSong.split('-', 1 );
+                              print 'Song:',Almostfinish[0]
+                              print 'Artist:',Almostfinish[1]
+                         # Ar 'data song ',dataSong
 
        
        # print 'print split ',text.split(':', 1 );
@@ -65,8 +70,8 @@ def GetSong(text):
 
 
 
-
-
+#data song dataSongWithHastTag  : Alive - Krewella  #iOSVmusic
+#data song dastasongarray: [u'blalablabla : Alive - Krewella  ', u'iOSVmusic']
 
 
 
