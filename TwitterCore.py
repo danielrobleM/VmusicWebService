@@ -47,17 +47,17 @@ def GetSong(text):
        # print text.split( );
        array =text.split(':', 1 );
        a=4
-       if len(array)==2:
-                  dataSongWithHastTag=array[1]
-                  dataSongArray=dataSongWithHastTag.split('#', 1 );
-                  if len(dataSongArray)==2:
-                         dataSong=dataSongArray[0]
-                         if len(dataSong)>0:
-                              # print dataSong
-                              Almostfinish=dataSong.split('-', 1 );
-                              print 'Song:',Almostfinish[0]
-                              print 'Artist:',Almostfinish[1]
-                         # Ar 'data song ',dataSong
+       # if len(array)==2:
+       #            dataSongWithHastTag=array[1]
+       #            dataSongArray=dataSongWithHastTag.split('#', 1 );
+       #            if len(dataSongArray)==2:
+       #                   dataSong=dataSongArray[0]
+       #                   if len(dataSong)>0:
+       #                        # print dataSong
+       #                        Almostfinish=dataSong.split('-', 1 );
+       #                        print 'Song:',Almostfinish[0]
+       #                        print 'Artist:',Almostfinish[1]
+       #                   # Ar 'data song ',dataSong
 
        
        # print 'print split ',text.split(':', 1 );
