@@ -31,6 +31,7 @@ def getTweet():
       # if No , forget this node , else continue
       # call RdioCore For get Album,Artist,Key,Icons(200,400)
        retweet_count=entry['retweet_count']
+       print 'Contador de retweet ',retweet_count
        name=entry['user']['name']
        profile_image_url=entry['user']['profile_image_url']
        tweet=iOStweet(name,text,profile_image_url,retweet_count)
